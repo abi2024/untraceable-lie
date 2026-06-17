@@ -1,0 +1,23 @@
+{
+  "pooled_auroc": 0.8183,
+  "per_fold": [
+    0.8274,
+    0.7791,
+    0.8347,
+    0.8239,
+    0.8361
+  ],
+  "per_fold_mean": 0.8202,
+  "per_fold_std": 0.0236,
+  "per_fold_min_max": [
+    0.7791,
+    0.8361
+  ],
+  "hanley_mcneil_se": 0.0112,
+  "hanley_mcneil_ci95": [
+    0.7963,
+    0.8403
+  ],
+  "method": "5-fold stem-disjoint spread + Hanley-McNeil analytic SE on pooled AUROC. NO row/group bootstrap (resampling with replacement breaks CV train/test independence and inflates AUROC via duplicate-row train/test overlap).",
+  "sanity": "point inside both intervals; per_fold_mean ~= pooled"
+}

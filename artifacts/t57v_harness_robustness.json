@@ -1,0 +1,10 @@
+{
+  "class_delta_pearson": 0.693,
+  "class_delta_pearson_ci95": [
+    0.2982,
+    0.9009
+  ],
+  "class_delta_spearman": 0.4795,
+  "n_questions": 39,
+  "note": "Added post-hoc after composite verdict=INVESTIGATE (Pearson 0.693 vs frozen 0.70). Spearman is the appropriate statistic for ordinal agreement of per-question class-deltas; Pearson CI added to test whether 0.70 lies inside sampling error. Frozen criteria UNCHANGED."
+}

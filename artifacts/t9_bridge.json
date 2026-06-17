@@ -1,0 +1,91 @@
+{
+  "thesis": "Channel doesn't matter; encoding does. Continuous readouts (internal 0.82, behavioral-logprob 0.83) recover the lie; binarized/verbalized readouts (0.60/0.56/~0.5) collapse.",
+  "n": {
+    "lie": 650,
+    "honest": 1006
+  },
+  "gradient_high_to_low": [
+    {
+      "rung": "Behavioral UQC (logprob)",
+      "encoding": "continuous",
+      "channel": "behavioral",
+      "auroc": 0.829,
+      "cv": "stem-disjoint"
+    },
+    {
+      "rung": "Internal probe (L24)",
+      "encoding": "continuous",
+      "channel": "internal",
+      "auroc": 0.8183,
+      "ci95": [
+        0.7963,
+        0.8403
+      ],
+      "cv": "stem-disjoint"
+    },
+    {
+      "rung": "Behavioral UQC (binary)",
+      "encoding": "binarized",
+      "channel": "behavioral",
+      "auroc": 0.599,
+      "cv": "stem-disjoint"
+    },
+    {
+      "rung": "Behavioral UQC (OOD, binary)",
+      "encoding": "binarized+transfer",
+      "channel": "behavioral",
+      "auroc": 0.559,
+      "cv": "their released anchor"
+    },
+    {
+      "rung": "Verbal self-eval max(A,B)",
+      "encoding": "verbalized",
+      "channel": "introspective",
+      "auroc": 0.6063,
+      "cv": "direct (unfitted score)"
+    }
+  ],
+  "internal_probe_detail": {
+    "auroc": 0.8183,
+    "ci95": [
+      0.7963,
+      0.8403
+    ],
+    "per_fold": [
+      0.8274,
+      0.7791,
+      0.8347,
+      0.8239,
+      0.8361
+    ],
+    "cv": "stem-disjoint 5-fold, L24, single linear probe"
+  },
+  "self_eval_detail": {
+    "se_a": {
+      "auroc": 0.5797,
+      "orientation_flipped": false,
+      "se_hm": 0.0145
+    },
+    "se_b": {
+      "auroc": 0.6062,
+      "orientation_flipped": false,
+      "se_hm": 0.0143
+    },
+    "max_se_a_se_b": {
+      "auroc": 0.6063,
+      "orientation_flipped": false,
+      "se_hm": 0.0143,
+      "note": "best-of-two direction; reported alongside se_a/se_b to avoid cherry-pick"
+    }
+  },
+  "crosscheck": {
+    "uqc_oof_in_scores_parquet": 0.8002,
+    "committed_logprob_headline": 0.829,
+    "note": "uqc_oof here is the within-template T5b OOF (~0.80); the 0.829 headline is the 39-Q stem-disjoint logprob from T8 \u2014 both continuous, consistent."
+  },
+  "interpretation": {
+    "continuous_vs_binarized_gap": 0.23,
+    "internal_vs_behavioral_logprob_gap": 0.011,
+    "reading": "internal ~= behavioral-logprob (channels converge, ~0.01 apart) >> binary ~= OOD (~0.23 below logprob) > verbal self-eval (~chance). The benchmark's HP-KR negative is a readout-encoding result, not a channel or signal-absence result."
+  }
+}

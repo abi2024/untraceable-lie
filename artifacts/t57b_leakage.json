@@ -1,0 +1,6 @@
+{
+  "stem_key": "core_question_hash(derived, A5-safe)",
+  "n_stems": 1030,
+  "stem_disjoint_auroc": 0.7954503746750269,
+  "verdict": "HEADLINE-SAFE: stem-disjoint AUROC holds >=0.70 \u2014 0.80 is not stem-memorization"
+}

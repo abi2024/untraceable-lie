@@ -1,0 +1,66 @@
+{
+  "amendment": "A8.6 variant",
+  "provenance": {
+    "gen_parquet_rows": 1656,
+    "lb_csv_sha256": "003a2b0e565c168f71fe7328e50a69b22c6de365b60d66a9fa2f176aec1b2eb7",
+    "bank_sha256_16": "ce7d773f177d4b68"
+  },
+  "validation": {
+    "n_rows": 1656,
+    "overall_cell_agreement": 0.9246279404704753,
+    "per_question_agreement_min": 0.5193236714975845,
+    "per_question_agreement_median": 0.9957729468599034,
+    "class_delta_pearson_r": 0.692964909982417,
+    "disagreement_logprob_signature": {
+      "mean_abs_lp_on_agree": 2.941149344836069,
+      "mean_abs_lp_on_disagree": 0.548678201205534,
+      "note": "clean harness => disagreements concentrate near |logprob-diff| ~ 0"
+    },
+    "frozen_criteria": {
+      "agreement_min": 0.75,
+      "delta_corr_min": 0.7
+    },
+    "verdict": "INVESTIGATE",
+    "axis_note": "ours = deterministic first-token argmax (their temp->0 limit); theirs = temp-0.7 sampled text parse \u2014 exact match impossible by design"
+  },
+  "cells": {
+    "logprob": {
+      "within_template_pooled": 0.8323551001682213,
+      "per_template": {
+        "1": 0.8290035087719299,
+        "5": 0.8332394823758731
+      },
+      "stem_disjoint": {
+        "auroc": 0.8290457256461232,
+        "k": 5,
+        "n_stems": 1030
+      },
+      "cross_template": {
+        "train_t1_eval_rest": 0.8437652282202611,
+        "train_t5_eval_rest": 0.8431438596491229
+      }
+    },
+    "binary_our_harness": {
+      "within_template_pooled": 0.6219995412142529,
+      "per_template": {
+        "1": 0.6060491228070174,
+        "5": 0.5964832963343981
+      },
+      "stem_disjoint": {
+        "auroc": 0.5989952592139471,
+        "k": 5,
+        "n_stems": 1030
+      },
+      "cross_template": {
+        "train_t1_eval_rest": 0.5848367534788024,
+        "train_t5_eval_rest": 0.6176701754385965
+      }
+    }
+  },
+  "comparison_refs": {
+    "ood_anchor_core": 0.5590801345771526,
+    "their_features_id_stem_disjoint": 0.5652798593057042,
+    "our_12q_logprob_stem_disjoint": 0.7955,
+    "our_12q_binary_id": 0.621
+  }
+}

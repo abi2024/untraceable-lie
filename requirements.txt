@@ -1,0 +1,10 @@
+# torch installed separately from cu124 index (see setup_env.sh) — NOT pinned here
+# because the CUDA build must come from the pytorch index, not pypi.
+transformers==4.50.3
+tokenizers<0.22
+accelerate==1.4.0
+pandas
+pyarrow
+numpy
+scikit-learn
+scipy

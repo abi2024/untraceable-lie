@@ -1,0 +1,52 @@
+{
+  "amendment": "A8",
+  "provenance": {
+    "lb_repo_sha": "ba10de150873d53a34e88278346f857962f82de3",
+    "lb_csv_sha256": "003a2b0e565c168f71fe7328e50a69b22c6de365b60d66a9fa2f176aec1b2eb7",
+    "seed": 0,
+    "sklearn": "1.6.1",
+    "pandas": "2.2.3",
+    "utc": "2026-06-11T14:58:31+00:00",
+    "lb_se_csv_sha256": "f806815f9a5b30e221b8e302edc9d5d09e766ca57dffae6b8199454c51e95cef"
+  },
+  "results": {
+    "join": {
+      "mode": "index(offset=0)",
+      "n": 1656,
+      "nan_feature_rows": 11
+    },
+    "ood_anchor_core": {
+      "auroc_their_released_scores": 0.5590801345771526,
+      "recall_lie": 0.0,
+      "recall_honest": 1.0,
+      "balanced_acc_their_threshold": 0.5
+    },
+    "in_distribution_their_bank_binary": {
+      "within_template_pooled": 0.5869314879951062,
+      "per_template": {
+        "1": 0.5789333333333333,
+        "5": 0.5776896421029833
+      },
+      "cross_template": {
+        "train_t1_eval_rest": 0.5320212247549949,
+        "train_t5_eval_rest": 0.5628315789473685
+      },
+      "stem_disjoint": {
+        "auroc": 0.5652798593057042,
+        "k": 5,
+        "n_stems": 1030
+      }
+    },
+    "gate_A8_3": {
+      "gap_stem_disjoint_minus_ood": 0.006199724728551681,
+      "threshold": 0.05,
+      "routing": "READOUT_LED_HEADLINE",
+      "note": "Both branches publishable; write-up reports the full additive decomposition either way."
+    },
+    "external_selfeval_cot_anchor": {
+      "auroc_prediction_extracted": 0.48635112402508024,
+      "axis": "SE-C (CoT-permitted; per A8.5 never compared to max(SE-A,SE-B))",
+      "n": 1656
+    }
+  }
+}

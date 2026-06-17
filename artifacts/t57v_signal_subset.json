@@ -1,0 +1,12 @@
+{
+  "full_set_spearman": 0.4795,
+  "n_total": 39,
+  "top10_spearman": 0.7306,
+  "top10_min_abs_their_delta": 0.0128,
+  "top15_spearman": 0.6648,
+  "top15_min_abs_their_delta": 0.005,
+  "top20_spearman": 0.6628,
+  "top20_min_abs_their_delta": 0.0018,
+  "prespec": "Rule fixed before run: pass iff top15 Spearman >= 0.70. Ranked by |their delta| (non-circular). K=10,20 reported as robustness.",
+  "verdict": "SIGNAL_SUBSET_FAIL"
+}

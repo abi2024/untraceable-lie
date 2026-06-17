@@ -1,0 +1,60 @@
+{
+  "frozen_cell": {
+    "layer": 24,
+    "role": "assistant_answer",
+    "probe": "L2-LR C=1.0",
+    "n_seeds": 7,
+    "cv": "stem-disjoint GroupKFold k=5 (1030 stems)"
+  },
+  "primary_single_layer_stem_disjoint": {
+    "mean": 0.8183269613090686,
+    "std": 0.0,
+    "min": 0.8183269613090686,
+    "max": 0.8183269613090686,
+    "per_seed": [
+      0.8183,
+      0.8183,
+      0.8183,
+      0.8183,
+      0.8183,
+      0.8183,
+      0.8183
+    ]
+  },
+  "secondary_ensemble_stem_disjoint": {
+    "mean": 0.8269567212111946,
+    "std": 1.199177923332954e-16,
+    "min": 0.8269567212111945,
+    "max": 0.8269567212111945,
+    "per_seed": [
+      0.827,
+      0.827,
+      0.827,
+      0.827,
+      0.827,
+      0.827,
+      0.827
+    ],
+    "n_layers": 10,
+    "dim": 51200,
+    "delta_vs_primary": 0.0086,
+    "verdict": "FLAT: ensemble ~= single layer => signal already linearly accessible at L24; strengthens the localization claim. Ensemble is a footnote, not a headline."
+  },
+  "continuity_seed0": {
+    "within_template": 0.8840602538614468,
+    "cross_template": 0.8595259213947086
+  },
+  "gate3": {
+    "threshold": 0.62,
+    "primary_mean": 0.8183269613090686,
+    "passed": true,
+    "verdict": "PASS \u2014 GATE 3 cleared"
+  },
+  "leakage_clean_channel_table": {
+    "internal_probe_L24_single": 0.8183269613090686,
+    "behavioral_uqc_logprob_39q": 0.829,
+    "behavioral_uqc_binary": 0.599,
+    "behavioral_ood": 0.559,
+    "note": "all stem-disjoint; this is the T9 bridge table. internal ~= behavioral-logprob >> binary ~= OOD => readout-hierarchy (Branch B)."
+  }
+}

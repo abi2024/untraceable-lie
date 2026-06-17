@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "layers": [
+      6,
+      10,
+      13,
+      17,
+      20,
+      24,
+      27,
+      31,
+      34,
+      38
+    ],
+    "roles": [
+      "system",
+      "user_question",
+      "assistant_answer",
+      "post_answer"
+    ],
+    "probe_role": "assistant_answer",
+    "k": 5,
+    "seed": 0,
+    "n": 1656
+  },
+  "per_layer_probe_role": {
+    "6": {
+      "within_template": 0.8368802569200183,
+      "cross_template": 0.8687291634806544
+    },
+    "10": {
+      "within_template": 0.8640357852882703,
+      "cross_template": 0.9016516286894022
+    },
+    "13": {
+      "within_template": 0.8732879645205689,
+      "cross_template": 0.8558984554213183
+    },
+    "17": {
+      "within_template": 0.8929958709282766,
+      "cross_template": 0.8729897537849822
+    },
+    "20": {
+      "within_template": 0.882691543049396,
+      "cross_template": 0.894716317479737
+    },
+    "24": {
+      "within_template": 0.8812509558036398,
+      "cross_template": 0.8595259213947086
+    },
+    "27": {
+      "within_template": 0.8771524697966051,
+      "cross_template": 0.8387933934852423
+    },
+    "31": {
+      "within_template": 0.8825080287505734,
+      "cross_template": 0.8180685120048936
+    },
+    "34": {
+      "within_template": 0.887455268389662,
+      "cross_template": 0.8598547178467656
+    },
+    "38": {
+      "within_template": 0.9226410766172197,
+      "cross_template": 0.9115537543966966
+    }
+  },
+  "negative_controls": {
+    "system": {
+      "layer": 38,
+      "within_template": 0.5317655604832543
+    },
+    "user_question": {
+      "layer": 38,
+      "within_template": 0.8549701789264413
+    },
+    "post_answer": {
+      "layer": 38,
+      "within_template": 0.8580654534332467
+    }
+  },
+  "ensemble": {
+    "method": "concat-then-LR",
+    "layers": [
+      6,
+      10,
+      13,
+      17,
+      20,
+      24,
+      27,
+      31,
+      34,
+      38
+    ],
+    "within_template": 0.9345266860376203,
+    "cross_template": 0.9154213182443797,
+    "dim": 51200
+  },
+  "best_single_layer": {
+    "layer": 38,
+    "within_template": 0.9226410766172197,
+    "cross_template": 0.9115537543966966
+  },
+  "curve_shape": {
+    "max": 0.9226410766172197,
+    "min_in_sweep": 0.8368802569200183,
+    "spread": 0.0857608196972014,
+    "argmax_layer": 38,
+    "ensemble_beats_best_single": true,
+    "note": "Nordby predicts gradual rotation: broad curve, ensemble >= best single. A sharp single peak would be the surprising (reportable) result."
+  },
+  "done_check": {
+    "criteria": {
+      "probe_role_above_chance": true,
+      "probe_beats_controls_by_0.05": true,
+      "ensemble_not_worse_than_best_single": true
+    },
+    "passed": true,
+    "best_probe_role_within_template": 0.9226410766172197,
+    "best_control_within_template": 0.8580654534332467,
+    "verdict": "PASS \u2014 signal localised, control-clean; proceed to T8 freezing layer 38 (+ ensemble variant)"
+  }
+}

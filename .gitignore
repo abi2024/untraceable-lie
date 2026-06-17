@@ -1,0 +1,10 @@
+*.parquet
+*.npz
+*.pkl
+*.env
+*token*
+*secret*
+*.pat
+artifacts/acts_*
+artifacts/*raw*
+artifacts/*with_keys*
